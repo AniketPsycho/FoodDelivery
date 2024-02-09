@@ -21,7 +21,7 @@ public class SecurityConfiguration {
     public final JWTAuthenticationFilter jwtAuthenticationFilter;
     public final AuthenticationProvider authenticationProvider;
 
-    private final String[] WHITELIST_URL_PATTERN = { "/api/v1/auth/**" };
+    private final String[] WHITELIST_URL_PATTERN = { "/api/v1/auth/**", "/api/v1/home" };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
