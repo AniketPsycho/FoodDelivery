@@ -1,12 +1,12 @@
-package com.learn.JwtTokenSecurity.services;
+package com.learn.FoodDelivery.services;
 
-import com.learn.JwtTokenSecurity.config.security.JwtService;
-import com.learn.JwtTokenSecurity.models.User;
-import com.learn.JwtTokenSecurity.repositories.UserRepository;
-import com.learn.JwtTokenSecurity.util.AuthenticateRequest;
-import com.learn.JwtTokenSecurity.util.AuthenticationResponseBody;
-import com.learn.JwtTokenSecurity.util.Authority;
-import com.learn.JwtTokenSecurity.util.RegisterRequest;
+import com.learn.FoodDelivery.config.security.JwtService;
+import com.learn.FoodDelivery.models.User;
+import com.learn.FoodDelivery.repositories.UserRepository;
+import com.learn.FoodDelivery.util.AuthenticateRequest;
+import com.learn.FoodDelivery.util.AuthenticationResponseBody;
+import com.learn.FoodDelivery.util.Authority;
+import com.learn.FoodDelivery.util.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

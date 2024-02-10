@@ -1,9 +1,9 @@
-package com.learn.JwtTokenSecurity.controllers;
+package com.learn.FoodDelivery.controllers;
 
-import com.learn.JwtTokenSecurity.services.AuthenticationService;
-import com.learn.JwtTokenSecurity.util.AuthenticateRequest;
-import com.learn.JwtTokenSecurity.util.AuthenticationResponseBody;
-import com.learn.JwtTokenSecurity.util.RegisterRequest;
+import com.learn.FoodDelivery.services.AuthenticationService;
+import com.learn.FoodDelivery.util.AuthenticateRequest;
+import com.learn.FoodDelivery.util.AuthenticationResponseBody;
+import com.learn.FoodDelivery.util.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
 

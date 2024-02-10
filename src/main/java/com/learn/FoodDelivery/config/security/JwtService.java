@@ -1,4 +1,4 @@
-package com.learn.JwtTokenSecurity.config.security;
+package com.learn.FoodDelivery.config.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,6 +1,6 @@
-package com.learn.JwtTokenSecurity.config;
+package com.learn.FoodDelivery.config;
 
-import com.learn.JwtTokenSecurity.config.security.JWTAuthenticationFilter;
+import com.learn.FoodDelivery.config.security.JWTAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -21,7 +20,7 @@ public class SecurityConfiguration {
     public final JWTAuthenticationFilter jwtAuthenticationFilter;
     public final AuthenticationProvider authenticationProvider;
 
-    private final String[] WHITELIST_URL_PATTERN = { "/api/v1/auth/**", "/api/v1/home" };
+    private final String[] WHITELIST_URL_PATTERN = { "/api/auth/**", "/api/home"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{

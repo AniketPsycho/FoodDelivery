@@ -1,4 +1,4 @@
-package com.learn.JwtTokenSecurity.util;
+package com.learn.FoodDelivery.util;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -13,9 +13,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RegisterRequest {
 
-    @JsonProperty("firstname")
+    @JsonProperty("firstName")
     private String firstname;
+
+    @JsonProperty("lastName")
     private String lastname;
     private String email;
     private String password;
+    private String mobileNumber;
 }

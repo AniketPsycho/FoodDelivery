@@ -1,6 +1,6 @@
-package com.learn.JwtTokenSecurity.models;
+package com.learn.FoodDelivery.models;
 
-import com.learn.JwtTokenSecurity.util.Authority;
+import com.learn.FoodDelivery.util.Authority;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,6 +21,7 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Integer Id;
+
     private String firstName;
     private String lastName;
 
@@ -28,6 +29,9 @@ public class User implements UserDetails {
     private String email;
 
     private String password;
+
+    @Column(unique = true)
+    private String mobileNumber;
 
     @Enumerated(EnumType.STRING)
     private Authority authority;

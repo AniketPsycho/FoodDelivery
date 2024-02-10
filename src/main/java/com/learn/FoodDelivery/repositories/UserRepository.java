@@ -1,6 +1,6 @@
-package com.learn.JwtTokenSecurity.repositories;
+package com.learn.FoodDelivery.repositories;
 
-import com.learn.JwtTokenSecurity.models.User;
+import com.learn.FoodDelivery.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

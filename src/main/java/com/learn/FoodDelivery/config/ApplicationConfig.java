@@ -1,6 +1,6 @@
-package com.learn.JwtTokenSecurity.config;
+package com.learn.FoodDelivery.config;
 
-import com.learn.JwtTokenSecurity.services.UserService;
+import com.learn.FoodDelivery.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.learn.JwtTokenSecurity.config.security;
+package com.learn.FoodDelivery.config.security;
 
-import com.learn.JwtTokenSecurity.services.UserService;
+import com.learn.FoodDelivery.services.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

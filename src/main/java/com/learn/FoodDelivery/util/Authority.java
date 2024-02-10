@@ -1,4 +1,4 @@
-package com.learn.JwtTokenSecurity.util;
+package com.learn.FoodDelivery.util;
 
 public enum Authority {
     ADMIN,
