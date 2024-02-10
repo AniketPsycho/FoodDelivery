@@ -33,5 +33,6 @@ build/
 .vscode/
 
 /src/main/resources/application-dev.properties
+/src/main/java/com/learn/FoodDelivery/config/dev/SeedData.java
 
 

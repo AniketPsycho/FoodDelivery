@@ -18,4 +18,8 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(()-> new UsernameNotFoundException("User Not Found"));
     }
 
+    public void deleteUser(String email){
+        userRepository.deleteByEmail(email);
+    }
+
 }
