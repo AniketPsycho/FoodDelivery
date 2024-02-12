@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -30,6 +31,7 @@ public class SecurityConfiguration {
 
         http
                 //.csrf(AbstractHttpConfigurer::disable)
+                .csrf( csrf -> csrf.csrfTokenRepository(new HttpSessionCsrfTokenRepository()))
                 .authorizeHttpRequests( auth -> auth
                                                 .requestMatchers(WHITELIST_URL_PATTERN)
                                                 .permitAll()
