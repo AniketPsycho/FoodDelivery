@@ -30,8 +30,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 
         http
-                //.csrf(AbstractHttpConfigurer::disable)
-                .csrf( csrf -> csrf.csrfTokenRepository(new HttpSessionCsrfTokenRepository()))
+                .csrf(AbstractHttpConfigurer::disable)
+                //.csrf( csrf -> csrf.csrfTokenRepository(new HttpSessionCsrfTokenRepository()))
                 .authorizeHttpRequests( auth -> auth
                                                 .requestMatchers(WHITELIST_URL_PATTERN)
                                                 .permitAll()
