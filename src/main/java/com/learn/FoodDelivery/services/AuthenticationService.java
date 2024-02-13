@@ -1,6 +1,5 @@
 package com.learn.FoodDelivery.services;
 
-import com.learn.FoodDelivery.config.security.JwtService;
 import com.learn.FoodDelivery.models.User;
 import com.learn.FoodDelivery.repositories.UserRepository;
 import com.learn.FoodDelivery.util.AuthenticateRequest;

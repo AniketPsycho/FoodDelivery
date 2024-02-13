@@ -4,9 +4,8 @@ import com.learn.FoodDelivery.config.security.JWTAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,28 +13,18 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
-import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 @RequiredArgsConstructor
-public class SecurityConfiguration {
+public class SecurityConfig {
 
     public final JWTAuthenticationFilter jwtAuthenticationFilter;
     public final AuthenticationProvider authenticationProvider;
 
     private final String[] WHITELIST_URL_PATTERN = { "/api/auth/**", "/api/home", "/api/user/**"};
+    private final String[] GET_ALLOWED_URL_PATTERN = {"/api/food"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
@@ -45,7 +34,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests( auth -> auth
                                                 .requestMatchers(WHITELIST_URL_PATTERN)
                                                 .permitAll()
-                                                //.requestMatchers("").hasAuthority("ADMIN")
+                                                .requestMatchers(HttpMethod.GET, GET_ALLOWED_URL_PATTERN)
+                                                .permitAll()
                                                 .anyRequest()
                                                 .authenticated()
                 )
